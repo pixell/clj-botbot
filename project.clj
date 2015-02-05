@@ -11,8 +11,8 @@
   :min-lein-version "2.5.0"
 
   :dependencies [[org.clojure/clojure "1.6.0"]
-  							 [org.clojure/core.match "0.3.0-alpha4"]
-  							 [org.clojure/tools.trace "0.7.8"]
+                 [org.clojure/core.match "0.3.0-alpha4"]
+                 [org.clojure/tools.trace "0.7.8"]
                  [com.rallydev/clj-flowdock "1.2.4"]
                  [slingshot "0.12.1"]]
 
@@ -28,4 +28,4 @@
   ;            "-DJIRA_USERNAME=jira-username"
   ;            "-DJIRA_PASSWORD=jira-password"]
 
-	:profiles {:uberjar {:aot :all}})
+  :profiles {:uberjar {:aot :all}})
