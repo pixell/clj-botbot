@@ -3,9 +3,9 @@
             [clj-flowdock.api.flow :as api-flow]
             [clj-flowdock.streaming :as stream]))
 
-(use 'clojure.tools.trace)
-
-(def flows (api-flow/list-all true))
+(def flows
+  (lazy-seq
+    (api-flow/list-all true)))
 
 (defn stream [private & flow-ids]
   (apply stream/open private flow-ids))
@@ -29,7 +29,7 @@
     first
     (api-flow/flow->flow-id)))
 
-(deftrace get-user [flow-id user-id]
+(defn get-user [flow-id user-id]
   (->>
     flows
     (filter #(= flow-id (% "id")))

@@ -8,7 +8,7 @@
 
 (def handlers (atom []))
 
-(defn- add-handlers [& new-handlers]
+(defn add-handlers [& new-handlers]
   (swap! handlers #(into % (flatten new-handlers))))
 
 (defn- process-msg [config msg]
